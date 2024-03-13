@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="SAGENet.">
+    <meta name="keywords" content="SAGENet, Motion Synthesis">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SAGENet: Stratified Avatar Generation from Sparse Observations</title>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-2 publication-title"> Stratified Avatar Generation from Sparse Observations</h1>
+                    <div class="is-size-3 publication-authors">
+                        <span class="author-block">CVPR 2024</span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://dulucas.github.io/" target="_blank" rel="noopener noreferrer">Yuming Du</a>,</span>
+                        <span class="author-block">
+                <a href="https://scholar.google.fr/citations?user=RwyrWEkAAAAJ&hl=fr" target="_blank"
+                   rel="noopener noreferrer">Robin
+                  Kips</a>,</span>
+                        <span class="author-block">
+                <a href="https://www.albertpumarola.com/" target="_blank" rel="noopener noreferrer">Albert Pumarola</a>,</span>
+                        <span class="author-block">
+                <a href="https://www.sebastianxstarke.com/" target="_blank"
+                   rel="noopener noreferrer">Sebastian Starke</a>,</span>
+                        <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=7T0CPEkAAAAJ&hl=en" target="_blank"
+                   rel="noopener noreferrer">Ali Thabet</a>,</span>
+                        <span class="author-block">
+                <a href="https://gdude.de/" target="_blank" rel="noopener noreferrer">Artsiom Sanakoyeu
+                  </a></span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">Meta AI</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+                            <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2304.08577.pdf"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                            <span class="link-block">
+                  <a href="https://arxiv.org/abs/2304.08577" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                  <a href="https://github.com/facebookresearch/AGRoL"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <img src="static/images/teaser.png" alt="teaser_img" height="100%">
+        </div>
+    </div>
+</section>
+
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <iframe width="900" height="506" src="https://www.youtube.com/embed/aRyRYvvr3hs"
+                    title="YouTube video player"
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+            gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        AGRoL is a novel diffusion based approach for the task of conditional motion synthesis.
+                    </p>
+                    <p>
+                        With the recent popularity spike of AR/VR applications,
+                        realistic and accurate control of 3D full-body avatars is
+                        a highly demanded feature. A particular challenge is that
+                        only a sparse tracking signal is available from standalone
+                        HMDs (Head Mounted Devices) and it is often limited to
+                        tracking the user’s head and wrist. While this signal is
+                        resourceful for reconstructing the upper body motion, the
+                        lower body is not tracked and must be synthesized from
+                        the limited information provided by the upper body joints.
+                        In this paper, we present AGRoL, a novel conditional
+                        diffusion model specially purposed to track full bodies given
+                        sparse upper-body tracking signals. Our model uses a simple
+                        multi-layer perceptrons (MLP) architecture and a novel
+                        conditioning scheme for motion data. It can predict accurate
+                        and smooth full-body motion, especially the challenging lower
+                        body movement. Contrary to common diffusion architectures,
+                        our compact architecture can run in real-time, making it usable
+                        for online body-tracking applications. We train and evaluate our
+                        model on AMASS motion capture dataset, and show that our approach
+                        outperforms state-of-the-art methods in generated motion accuracy
+                        and smoothness. We further justify our design choices through
+                        extensive experiments and ablations.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--/ Abstract. -->
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Approach. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3">Approach</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Our network is composed of only 4 types of components widely used in the deep learning era:
+                        fully connected
+                        layer (FC), SiLU activation layer, 1D convolutional layer with kernel size 1 and layer
+                        normalization(LN).
+                        Note that the 1D convolutional layer with kernel size 1 can be also seen as a fully connected
+                        layer operating
+                        on a different dimension. Initialized from gaussian noises, the motion sequence is fed to the
+                        network after
+                        combining with the upper body signals.
+                    </p>
+                    <img src="static/images/model.png" alt="Approach" height="80%">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop is-fluid">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3">Results</h2>
+                <div class="tabs is-boxed is-centered is-medium" id="tabs">
+                    <ul>
+                        <li data-tab="long-videos" class="is-active"><a>Long-Videos</a></li>
+                        <li data-tab="trajectory"><a>Trajectory</a></li>
+                        <li data-tab="demo"><a>Demo</a></li>
+                    </ul>
+                </div>
+                <div class="columns is-centered has-text-left">
+                    <div class="column is-two-thirds content">
+                        <p>Here we show some comparison between AGRoL, AvatarPoser and Ground Truth.
+                    </div>
+                </div>
+                <div id="tabs-content">
+
+                    <div data-content="long-videos" class="tab-content is-active content">
+                        <div class="columns is-centered has-text-left">
+                            <div class="column is-two-thirds content">
+                                Visualization results of long videos.
+                            </div>
+                        </div>
+                        <table width="100%">
+                            <tr>
+                                <th width="15.6%" align="center">GT</th>
+                                <th width="15.6%" align="center">AvatarPoser</th>
+                                <th width="15.6%" align="center">AGRoL</th>
+                                <th width="4%" align="center"></th>
+                                <th width="15.6%" align="center">GT</th>
+                                <th width="15.6%" align="center">AvatarPoser</th>
+                                <th width="15.6%" align="center">AGRoL</th>
+                            </tr>
+                            <tr>
+                                <td align="center"><img src="static/resources/gifs/0003_gt.gif"></td>
+                                <td align="center"><img src="static/resources/gifs/0003_avatarposer.gif"></td>
+                                <td align="center"><img src="static/resources/gifs/0003_agrol.gif"></td>
+                                <td align="center" style="vertical-align: middle"></td>
+                                <td align="center"><img src="static/resources/gifs/0008_gt.gif"></td>
+                                <td align="center"><img src="static/resources/gifs/0008_avatarposer.gif"></td>
+                                <td align="center"><img src="static/resources/gifs/0008_agrol.gif"></td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+                    <div data-content="demo" class="tab-content content">
+                        <div class="columns is-centered has-text-left">
+                            <div class="column is-two-thirds content">
+                                We demonstrate generalization of AGRoL to real VR inputs from Quest.
+                            </div>
+                        </div>
+                        <table width="100%">
+                            <tr>
+                                <th width="100%" align="center">AGRoL</th>
+                            </tr>
+                            <tr>
+                                <td align="center"><img src="static/resources/demo/demo.gif"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div data-content="trajectory" class="tab-content content">
+                        <div class="columns is-centered has-text-left">
+                            <div class="column is-two-thirds content">
+                                By visualizing the trajectories of the motion, the jittering issues and foot sliding
+                                issues can be better
+                                viewed from the figures. Smooth motion tends to have regular pose trajectories with the
+                                velocity vector of
+                                each joint changing steadily. The density of the pose trajectories will change along
+                                with the walking speed,
+                                the trajectories will become denser when the person slows down. Thus, if there is no
+                                foot sliding, we should
+                                occasionally see the change of density in pose trajectories.
+                            </div>
+                        </div>
+                        <table width="100%">
+                            <tr>
+                                <th width="33%" align="center">GT</th>
+                                <th width="33%" align="center">AvatarPoser</th>
+                                <th width="33%" align="center">AGRoL</th>
+                            </tr>
+                            <tr>
+                                <td align="center"><img src="static/resources/trajectory/gt01.jpg"></td>
+                                <td align="center"><img src="static/resources/trajectory/ava01.jpg"></td>
+                                <td align="center"><img src="static/resources/trajectory/agrol01.jpg"></td>
+                            </tr>
+
+                            <tr>
+                                <td align="center"><img src="static/resources/trajectory/gt02.jpg"></td>
+                                <td align="center"><img src="static/resources/trajectory/ava02.jpg"></td>
+                                <td align="center"><img src="static/resources/trajectory/agrol02.jpg"></td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@inproceedings{du2023agrol,
+  author    = {Du, Yuming and Kips, Robin and Pumarola, Albert and Starke, Sebastian and Thabet, Ali and Sanakoyeu, Artsiom},
+  title     = {Avatars Grow Legs: Generating Smooth Human Motion from Sparse Tracking Inputs with Diffusion Model},
+  booktitle   = {CVPR},
+  year      = {2023},
+}</code></pre>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        This website is licensed under a <a rel="license"
+                                                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+                    <p>
+                        This website is based on the awesome <a
+                            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
