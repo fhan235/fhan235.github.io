@@ -69,7 +69,7 @@
                         <div class="publication-links">
                             <!-- PDF Link. -->
                             <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2304.08577.pdf"
+                  <a href=""
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -78,7 +78,7 @@
                   </a>
                 </span>
                             <span class="link-block">
-                  <a href="https://arxiv.org/abs/2304.08577" class="external-link button is-normal is-rounded is-dark">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -87,7 +87,7 @@
                 </span>
                             <!-- Code Link. -->
                             <span class="link-block">
-                  <a href="https://github.com/facebookresearch/AGRoL"
+                  <a href=""
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -112,16 +112,16 @@
     </div>
 </section>
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
     <div class="container is-max-desktop">
         <div class="hero-body">
-            <iframe width="900" height="506" src="https://www.youtube.com/embed/aRyRYvvr3hs"
+            <iframe width="900" height="506" src=""
                     title="YouTube video player"
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
             gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="section">
     <div class="container is-max-desktop">
@@ -131,31 +131,7 @@
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        AGRoL is a novel diffusion based approach for the task of conditional motion synthesis.
-                    </p>
-                    <p>
-                        With the recent popularity spike of AR/VR applications,
-                        realistic and accurate control of 3D full-body avatars is
-                        a highly demanded feature. A particular challenge is that
-                        only a sparse tracking signal is available from standalone
-                        HMDs (Head Mounted Devices) and it is often limited to
-                        tracking the user’s head and wrist. While this signal is
-                        resourceful for reconstructing the upper body motion, the
-                        lower body is not tracked and must be synthesized from
-                        the limited information provided by the upper body joints.
-                        In this paper, we present AGRoL, a novel conditional
-                        diffusion model specially purposed to track full bodies given
-                        sparse upper-body tracking signals. Our model uses a simple
-                        multi-layer perceptrons (MLP) architecture and a novel
-                        conditioning scheme for motion data. It can predict accurate
-                        and smooth full-body motion, especially the challenging lower
-                        body movement. Contrary to common diffusion architectures,
-                        our compact architecture can run in real-time, making it usable
-                        for online body-tracking applications. We train and evaluate our
-                        model on AMASS motion capture dataset, and show that our approach
-                        outperforms state-of-the-art methods in generated motion accuracy
-                        and smoothness. We further justify our design choices through
-                        extensive experiments and ablations.
+                        Estimating 3D full-body avatars from AR/VR devices is essential for creating immersive experiences in AR/VR applications. Meanwhile, this task is challenging due to the limited input from Head Mounted Devices, which capture only sparse observations from the head and hands. Predicting the full-body avatars, particularly the lower body, from these sparse observations presents significant difficulties. In this paper, we are inspired by the inherent property of the kinematic tree defined in the Skinned Multi-Person Linear Model (SMPL) model, where the upper body and lower body share only one common ancestor, i.e., the root node, bringing the potential of decoupled reconstruction. We propose a stratified approach to decouple the conventional full-body avatar reconstruction pipeline into two stages, with the reconstruction of the upper body first and a subsequent reconstruction of the lower body conditioned on the previous stage. To implement this straightforward idea, we leverage the latent diffusion model as a powerful probabilistic generator, and train it to follow the latent distribution of decoupled motions explored by a VQ-VAE encoder-decoder model. Extensive experiments on AMMAS mocap dataset demonstrate our state-of-the-art performance in the reconstruction of full-body human motions.
                     </p>
                 </div>
             </div>
@@ -173,15 +149,7 @@
                 <h2 class="title is-3">Approach</h2>
                 <div class="content has-text-justified">
                     <p>
-                        Our network is composed of only 4 types of components widely used in the deep learning era:
-                        fully connected
-                        layer (FC), SiLU activation layer, 1D convolutional layer with kernel size 1 and layer
-                        normalization(LN).
-                        Note that the 1D convolutional layer with kernel size 1 can be also seen as a fully connected
-                        layer operating
-                        on a different dimension. Initialized from gaussian noises, the motion sequence is fed to the
-                        network after
-                        combining with the upper body signals.
+                        The proposed SAGE Net mainly contains two components: (a) Disentangled VQ-VAE for discrete human motion latent learning. To facilitate visualization, we incorporate zero rotations as padding for the lower body in the Upper VQ-VAE, and vice versa for the Lower VQ-VAE. Consequently, in the visualizations of the Upper VQ-VAE, the lower body remains in a stationary pose, whereas in the visualizations of the Lower VQ-VAE, the upper body is maintained in a T-pose. (b) The stratified diffusion model, which models the conditional distribution of the latent space for upper and lower motion. This model sequentially infers the upper and lower body latents, capturing the correlation between upper and lower motions. By employing a dedicated full-body decoder on the concatenated upper and lower latents, we can obtain full-body motion
                     </p>
                     <img src="static/images/model.png" alt="Approach" height="80%">
                 </div>
@@ -190,7 +158,7 @@
     </div>
 </section>
 
-<section class="section">
+<!-- <section class="section">
     <div class="container is-max-desktop is-fluid">
         <div class="columns is-centered has-text-centered">
             <div class="column is-full-width">
@@ -293,16 +261,16 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
-        <pre><code>@inproceedings{du2023agrol,
-  author    = {Du, Yuming and Kips, Robin and Pumarola, Albert and Starke, Sebastian and Thabet, Ali and Sanakoyeu, Artsiom},
-  title     = {Avatars Grow Legs: Generating Smooth Human Motion from Sparse Tracking Inputs with Diffusion Model},
+        <pre><code>@inproceedings{feng2023sage,
+  author    = {Feng, Han and Ma, Wenchao and Gao, Quankai and Zheng, Xianwei and Xue, Nan and Xu, Huijuan},
+  title     = {Stratified Avatar Generation from Sparse Observations},
   booktitle   = {CVPR},
-  year      = {2023},
+  year      = {2024},
 }</code></pre>
     </div>
 </section>
