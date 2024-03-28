@@ -158,16 +158,16 @@
     </div>
 </section>
 
-<!-- <section class="section">
+<section class="section">
     <div class="container is-max-desktop is-fluid">
         <div class="columns is-centered has-text-centered">
             <div class="column is-full-width">
                 <h2 class="title is-3">Results</h2>
                 <div class="tabs is-boxed is-centered is-medium" id="tabs">
                     <ul>
+                        <li data-tab="demo"><a>Demo</a></li>
                         <li data-tab="long-videos" class="is-active"><a>Long-Videos</a></li>
                         <li data-tab="trajectory"><a>Trajectory</a></li>
-                        <li data-tab="demo"><a>Demo</a></li>
                     </ul>
                 </div>
                 <div class="columns is-centered has-text-left">
@@ -177,7 +177,7 @@
                 </div>
                 <div id="tabs-content">
 
-                    <div data-content="long-videos" class="tab-content is-active content">
+                    <!-- <div data-content="long-videos" class="tab-content is-active content">
                         <div class="columns is-centered has-text-left">
                             <div class="column is-two-thirds content">
                                 Visualization results of long videos.
@@ -204,7 +204,7 @@
                             </tr>
 
                         </table>
-                    </div>
+                    </div> -->
 
                     <div data-content="demo" class="tab-content content">
                         <div class="columns is-centered has-text-left">
@@ -214,15 +214,28 @@
                         </div>
                         <table width="100%">
                             <tr>
-                                <th width="100%" align="center">AGRoL</th>
+                                <th width="50%" align="center">Pred</th>
+                                <th width="50%" align="center">GT</th>
                             </tr>
                             <tr>
-                                <td align="center"><img src="static/resources/demo/demo.gif"></td>
+                                <td align="center"><img src="static/images/gif/jump_pred.gif"></td>
+<!--                                <td align="center"><img src="static/images/gif/jump_ori.gif"></td>-->
                             </tr>
+
+                            <tr>
+                                <td align="center"><img src="static/images/gif/walk_pred.gif"></td>
+<!--                                <td align="center"><img src="static/images/gif/jump_ori_crop.gif"></td>-->
+                            </tr>
+
+                            <tr>
+                                <td align="center"><img src="static/images/gif/run_pred.gif"></td>
+<!--                                <td align="center"><img src="static/images/gif/jump_ori_crop.gif"></td>-->
+                            </tr>
+
                         </table>
                     </div>
 
-                    <div data-content="trajectory" class="tab-content content">
+                  <!--    <div data-content="trajectory" class="tab-content content">
                         <div class="columns is-centered has-text-left">
                             <div class="column is-two-thirds content">
                                 By visualizing the trajectories of the motion, the jittering issues and foot sliding
@@ -256,12 +269,13 @@
 
                         </table>
                     </div>
+                  -->
 
                 </div>
             </div>
         </div>
     </div>
-</section> -->
+</section>
 
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
