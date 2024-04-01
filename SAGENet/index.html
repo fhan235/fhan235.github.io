@@ -112,16 +112,23 @@
     </div>
 </section>
 
-<section class="hero teaser">
-    <div class="container is-max-desktop">
-        <div class="hero-body">
-            <iframe width="900" height="506" src="https://www.youtube.com/embed/RkXaxyv1TOU"
-                    title="YouTube video player"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-            gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-    </div>
-</section>
+<!--<section class="hero teaser">-->
+<!--    <div class="container is-max-desktop">-->
+<!--        <div class="hero-body" align="center">-->
+<!--            <iframe width="900" height="600" src="https://www.youtube.com/embed/RkXaxyv1TOU"-->
+<!--                    title="YouTube video player"-->
+<!--                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;-->
+<!--            gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<div align="center">
+    <iframe width="1080" height="720" src="https://www.youtube.com/embed/RkXaxyv1TOU"
+            title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+            gyroscope; picture-in-picture; web-share" allowfullscreen>
+    </iframe>
+</div>
 
 <section class="section">
     <div class="container is-max-desktop">
@@ -187,42 +194,42 @@
                 <h2 class="title is-3">Results</h2>
                 <div class="tabs is-boxed is-centered is-medium" id="tabs">
                     <ul>
-                        <li data-tab="demo"><a>Demo</a></li>
-                        <li data-tab="long-videos" class="is-active"><a>Long-Videos</a></li>
+                        <li data-tab="demo" class="is-active"><a>Demo</a></li>
+<!--                        <li data-tab="long-videos" class="is-active"><a>Long-Videos</a></li>-->
                         <!--                        <li data-tab="trajectory"><a>Trajectory</a></li>-->
                     </ul>
                 </div>
                 <div id="tabs-content">
-                    <div data-content="long-videos" class="tab-content is-active content">
-                        <div class="columns is-centered has-text-left">
-                            <div class="column is-two-thirds content">
-                                Visualization results of long videos.
-                            </div>
-                        </div>
+<!--                    <div data-content="long-videos" class="tab-content is-active content">-->
+<!--                        <div class="columns is-centered has-text-left">-->
+<!--                            <div class="column is-two-thirds content">-->
+<!--                                Visualization results of long videos.-->
+<!--                            </div>-->
+<!--                        </div>-->
 
-                        <!-- <table width="100%">
-                            <tr>
-                                <th width="15.6%" align="center">GT</th>
-                                <th width="15.6%" align="center">AvatarPoser</th>
-                                <th width="15.6%" align="center">AGRoL</th>
-                                <th width="4%" align="center"></th>
-                                <th width="15.6%" align="center">GT</th>
-                                <th width="15.6%" align="center">AvatarPoser</th>
-                                <th width="15.6%" align="center">AGRoL</th>
-                            </tr>
-                            <tr>
-                                <td align="center"><img src="static/resources/gifs/0003_gt.gif"></td>
-                                <td align="center"><img src="static/resources/gifs/0003_avatarposer.gif"></td>
-                                <td align="center"><img src="static/resources/gifs/0003_agrol.gif"></td>
-                                <td align="center" style="vertical-align: middle"></td>
-                                <td align="center"><img src="static/resources/gifs/0008_gt.gif"></td>
-                                <td align="center"><img src="static/resources/gifs/0008_avatarposer.gif"></td>
-                                <td align="center"><img src="static/resources/gifs/0008_agrol.gif"></td>
-                            </tr>
-                        </table> -->
-                    </div>
+<!--                        <table width="100%">-->
+<!--                            <tr>-->
+<!--                                <th width="15.6%" align="center">GT</th>-->
+<!--                                <th width="15.6%" align="center">AvatarPoser</th>-->
+<!--                                <th width="15.6%" align="center">AGRoL</th>-->
+<!--                                <th width="4%" align="center"></th>-->
+<!--                                <th width="15.6%" align="center">GT</th>-->
+<!--                                <th width="15.6%" align="center">AvatarPoser</th>-->
+<!--                                <th width="15.6%" align="center">AGRoL</th>-->
+<!--                            </tr>-->
+<!--                            <tr>-->
+<!--                                <td align="center"><img src="static/resources/gifs/0003_gt.gif"></td>-->
+<!--                                <td align="center"><img src="static/resources/gifs/0003_avatarposer.gif"></td>-->
+<!--                                <td align="center"><img src="static/resources/gifs/0003_agrol.gif"></td>-->
+<!--                                <td align="center" style="vertical-align: middle"></td>-->
+<!--                                <td align="center"><img src="static/resources/gifs/0008_gt.gif"></td>-->
+<!--                                <td align="center"><img src="static/resources/gifs/0008_avatarposer.gif"></td>-->
+<!--                                <td align="center"><img src="static/resources/gifs/0008_agrol.gif"></td>-->
+<!--                            </tr>-->
+<!--                        </table>-->
+<!--                    </div>-->
 
-                    <div data-content="demo" class="tab-content content">
+                    <div data-content="demo" class="tab-content is-active content">
                         <div class="columns is-centered has-text-left">
                             <div class="column is-two-thirds content">
                                 We demonstrate generalization of SAGENet to real VR inputs from Quest2.
