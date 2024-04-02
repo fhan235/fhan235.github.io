@@ -108,6 +108,7 @@
     <div class="container is-max-desktop">
         <div class="hero-body">
             <img src="static/images/teaser.png" alt="teaser_img" height="100%">
+            Stratified avatar generation from sparse observations. Given the sensory sparse observation of the body motion: 6-DoF poses of the head and hand marked by RGB axes in (a), our method leverages a disentangled body representation in (b) to reconstruct the upper-body conditioned on the sparse observation in (c), and lower-body conditioned on the upper-body reconstruction in (d) to accomplish the full-body reconstruction in (e).
         </div>
     </div>
 </section>
@@ -123,6 +124,7 @@
 <!--    </div>-->
 <!--</section>-->
 <div align="center">
+    <h2 class="title is-3">Video</h2>
     <iframe width="1080" height="720" src="https://www.youtube.com/embed/RkXaxyv1TOU"
             title="YouTube video player"
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
@@ -138,21 +140,7 @@
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        Estimating 3D full-body avatars from AR/VR devices is essential for creating immersive
-                        experiences in AR/VR applications. Meanwhile, this task is challenging due to the limited input
-                        from Head Mounted Devices, which capture only sparse observations from the head and hands.
-                        Predicting the full-body avatars, particularly the lower body, from these sparse observations
-                        presents significant difficulties. In this paper, we are inspired by the inherent property of
-                        the kinematic tree defined in the Skinned Multi-Person Linear Model (SMPL) model, where the
-                        upper body and lower body share only one common ancestor, i.e., the root node, bringing the
-                        potential of decoupled reconstruction. We propose a stratified approach to decouple the
-                        conventional full-body avatar reconstruction pipeline into two stages, with the reconstruction
-                        of the upper body first and a subsequent reconstruction of the lower body conditioned on the
-                        previous stage. To implement this straightforward idea, we leverage the latent diffusion model
-                        as a powerful probabilistic generator, and train it to follow the latent distribution of
-                        decoupled motions explored by a VQ-VAE encoder-decoder model. Extensive experiments on AMMAS
-                        mocap dataset demonstrate our state-of-the-art performance in the reconstruction of full-body
-                        human motions.
+                        Estimating 3D full-body avatars from AR/VR devices is essential for creating immersive experiences in AR/VR applications. This task is challenging due to the limited input from Head Mounted Devices, which capture only sparse observations from the head and hands. Predicting the full-body avatars, particularly the lower body, from these sparse observations presents significant difficulties. In this paper, we are inspired by the inherent property of the kinematic tree defined in the Skinned Multi-Person Linear (SMPL) model, where the upper body and lower body share only one common ancestor node, bringing the potential of decoupled reconstruction. We propose a stratified approach to decouple the conventional full-body avatar reconstruction pipeline into two stages, with the reconstruction of the upper body first and a subsequent reconstruction of the lower body conditioned on the previous stage. To implement this straightforward idea, we leverage the latent diffusion model as a powerful probabilistic generator, and train it to follow the latent distribution of decoupled motions explored by a VQ-VAE encoder-decoder model. Extensive experiments on AMASS mocap dataset demonstrate our state-of-the-art performance in the reconstruction of full-body motions. 
                     </p>
                 </div>
             </div>
@@ -178,9 +166,26 @@
                         stratified diffusion model, which models the conditional distribution of the latent space for
                         upper and lower motion. This model sequentially infers the upper and lower body latents,
                         capturing the correlation between upper and lower motions. By employing a dedicated full-body
-                        decoder on the concatenated upper and lower latents, we can obtain full-body motion
+                        decoder on the concatenated upper and lower latents, we can obtain full-body motion.
                     </p>
-                    <img src="static/images/model.png" alt="Approach" height="80%">
+                    <img src="static/images/model.jpg" alt="Approach" height="80%">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Approach. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3">Results</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Qualitative results on the AMASS Dataset.
+                    </p>
+                    <img src="static/images/vis.png" alt="Vis" height="80%">
                 </div>
             </div>
         </div>
