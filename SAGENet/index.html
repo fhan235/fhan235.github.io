@@ -108,7 +108,11 @@
     <div class="container is-max-desktop">
         <div class="hero-body">
             <img src="static/images/teaser.png" alt="teaser_img" height="100%">
-            Stratified avatar generation from sparse observations. Given the sensory sparse observation of the body motion: 6-DoF poses of the head and hand marked by RGB axes in (a), our method leverages a disentangled body representation in (b) to reconstruct the upper-body conditioned on the sparse observation in (c), and lower-body conditioned on the upper-body reconstruction in (d) to accomplish the full-body reconstruction in (e).
+            Stratified avatar generation from sparse observations. Given the sensory sparse observation of the body
+            motion: 6-DoF poses of the head and hand marked by RGB axes in (a), our method leverages a disentangled body
+            representation in (b) to reconstruct the upper-body conditioned on the sparse observation in (c), and
+            lower-body conditioned on the upper-body reconstruction in (d) to accomplish the full-body reconstruction in
+            (e).
         </div>
     </div>
 </section>
@@ -140,7 +144,20 @@
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        Estimating 3D full-body avatars from AR/VR devices is essential for creating immersive experiences in AR/VR applications. This task is challenging due to the limited input from Head Mounted Devices, which capture only sparse observations from the head and hands. Predicting the full-body avatars, particularly the lower body, from these sparse observations presents significant difficulties. In this paper, we are inspired by the inherent property of the kinematic tree defined in the Skinned Multi-Person Linear (SMPL) model, where the upper body and lower body share only one common ancestor node, bringing the potential of decoupled reconstruction. We propose a stratified approach to decouple the conventional full-body avatar reconstruction pipeline into two stages, with the reconstruction of the upper body first and a subsequent reconstruction of the lower body conditioned on the previous stage. To implement this straightforward idea, we leverage the latent diffusion model as a powerful probabilistic generator, and train it to follow the latent distribution of decoupled motions explored by a VQ-VAE encoder-decoder model. Extensive experiments on AMASS mocap dataset demonstrate our state-of-the-art performance in the reconstruction of full-body motions. 
+                        Estimating 3D full-body avatars from AR/VR devices is essential for creating immersive
+                        experiences in AR/VR applications. This task is challenging due to the limited input from Head
+                        Mounted Devices, which capture only sparse observations from the head and hands. Predicting the
+                        full-body avatars, particularly the lower body, from these sparse observations presents
+                        significant difficulties. In this paper, we are inspired by the inherent property of the
+                        kinematic tree defined in the Skinned Multi-Person Linear (SMPL) model, where the upper body and
+                        lower body share only one common ancestor node, bringing the potential of decoupled
+                        reconstruction. We propose a stratified approach to decouple the conventional full-body avatar
+                        reconstruction pipeline into two stages, with the reconstruction of the upper body first and a
+                        subsequent reconstruction of the lower body conditioned on the previous stage. To implement this
+                        straightforward idea, we leverage the latent diffusion model as a powerful probabilistic
+                        generator, and train it to follow the latent distribution of decoupled motions explored by a
+                        VQ-VAE encoder-decoder model. Extensive experiments on AMASS mocap dataset demonstrate our
+                        state-of-the-art performance in the reconstruction of full-body motions.
                     </p>
                 </div>
             </div>
@@ -185,7 +202,7 @@
                     <p>
                         Qualitative results on the AMASS Dataset.
                     </p>
-<!--                    <img src="static/images/vis2.png" alt="Vis" height="80%">-->
+                    <!--                    <img src="static/images/vis2.png" alt="Vis" height="80%">-->
                     <img src="static/images/vis.png" alt="Vis" height="80%">
 
                 </div>
@@ -202,41 +219,68 @@
                 <div class="tabs is-boxed is-centered is-medium" id="tabs">
                     <ul>
                         <li data-tab="demo" class="is-active"><a>Demo</a></li>
-<!--                        <li data-tab="long-videos" class="is-active"><a>Long-Videos</a></li>-->
+                        <!--                        <li data-tab="long-videos" class="is-active"><a>Long-Videos</a></li>-->
                         <!--                        <li data-tab="trajectory"><a>Trajectory</a></li>-->
                     </ul>
                 </div>
                 <div id="tabs-content">
-<!--                    <div data-content="long-videos" class="tab-content is-active content">-->
-<!--                        <div class="columns is-centered has-text-left">-->
-<!--                            <div class="column is-two-thirds content">-->
-<!--                                Visualization results of long videos.-->
-<!--                            </div>-->
-<!--                        </div>-->
+                    <!--                    <div data-content="long-videos" class="tab-content is-active content">-->
+                    <!--                        <div class="columns is-centered has-text-left">-->
+                    <!--                            <div class="column is-two-thirds content">-->
+                    <!--                                Visualization results of long videos.-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
 
-<!--                        <table width="100%">-->
-<!--                            <tr>-->
-<!--                                <th width="15.6%" align="center">GT</th>-->
-<!--                                <th width="15.6%" align="center">AvatarPoser</th>-->
-<!--                                <th width="15.6%" align="center">AGRoL</th>-->
-<!--                                <th width="4%" align="center"></th>-->
-<!--                                <th width="15.6%" align="center">GT</th>-->
-<!--                                <th width="15.6%" align="center">AvatarPoser</th>-->
-<!--                                <th width="15.6%" align="center">AGRoL</th>-->
-<!--                            </tr>-->
-<!--                            <tr>-->
-<!--                                <td align="center"><img src="static/resources/gifs/0003_gt.gif"></td>-->
-<!--                                <td align="center"><img src="static/resources/gifs/0003_avatarposer.gif"></td>-->
-<!--                                <td align="center"><img src="static/resources/gifs/0003_agrol.gif"></td>-->
-<!--                                <td align="center" style="vertical-align: middle"></td>-->
-<!--                                <td align="center"><img src="static/resources/gifs/0008_gt.gif"></td>-->
-<!--                                <td align="center"><img src="static/resources/gifs/0008_avatarposer.gif"></td>-->
-<!--                                <td align="center"><img src="static/resources/gifs/0008_agrol.gif"></td>-->
-<!--                            </tr>-->
-<!--                        </table>-->
-<!--                    </div>-->
-
+                    <!--                        <table width="100%">-->
+                    <!--                            <tr>-->
+                    <!--                                <th width="15.6%" align="center">GT</th>-->
+                    <!--                                <th width="15.6%" align="center">AvatarPoser</th>-->
+                    <!--                                <th width="15.6%" align="center">AGRoL</th>-->
+                    <!--                                <th width="4%" align="center"></th>-->
+                    <!--                                <th width="15.6%" align="center">GT</th>-->
+                    <!--                                <th width="15.6%" align="center">AvatarPoser</th>-->
+                    <!--                                <th width="15.6%" align="center">AGRoL</th>-->
+                    <!--                            </tr>-->
+                    <!--                            <tr>-->
+                    <!--                                <td align="center"><img src="static/resources/gifs/0003_gt.gif"></td>-->
+                    <!--                                <td align="center"><img src="static/resources/gifs/0003_avatarposer.gif"></td>-->
+                    <!--                                <td align="center"><img src="static/resources/gifs/0003_agrol.gif"></td>-->
+                    <!--                                <td align="center" style="vertical-align: middle"></td>-->
+                    <!--                                <td align="center"><img src="static/resources/gifs/0008_gt.gif"></td>-->
+                    <!--                                <td align="center"><img src="static/resources/gifs/0008_avatarposer.gif"></td>-->
+                    <!--                                <td align="center"><img src="static/resources/gifs/0008_agrol.gif"></td>-->
+                    <!--                            </tr>-->
+                    <!--                        </table>-->
+                    <!--                    </div>-->
                     <div data-content="demo" class="tab-content is-active content">
+                        <div class="columns is-centered has-text-left">
+                            <div class="column is-two-thirds content">
+                                We demonstrate generalization of SAGENet to real VR inputs from Quest2.
+                            </div>
+                        </div>
+                        <table width="100%">
+                            <tr>
+                                <th width="100%" align="center">Real Demo</th>
+                            </tr>
+                            <tr>
+                                <td align="center"><img src="static/images/gif_new/jump.gif"></td>
+                            </tr>
+
+                            <tr>
+                                <td align="center"><img src="static/images/gif_new/walk.gif"></td>
+                            </tr>
+
+                            <tr>
+                                <td align="center"><img src="static/images/gif_new/kick.gif"></td>
+                            </tr>
+
+                            <tr>
+                                <td align="center"><img src="static/images/gif_new/jog.gif"></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <!-- <div data-content="demo" class="tab-content is-active content">
                         <div class="columns is-centered has-text-left">
                             <div class="column is-two-thirds content">
                                 We demonstrate generalization of SAGENet to real VR inputs from Quest2.
@@ -278,43 +322,7 @@
                             </tr>
 
                         </table>
-                    </div>
-
-                    <!--    <div data-content="trajectory" class="tab-content content">
-                          <div class="columns is-centered has-text-left">
-                              <div class="column is-two-thirds content">
-                                  By visualizing the trajectories of the motion, the jittering issues and foot sliding
-                                  issues can be better
-                                  viewed from the figures. Smooth motion tends to have regular pose trajectories with the
-                                  velocity vector of
-                                  each joint changing steadily. The density of the pose trajectories will change along
-                                  with the walking speed,
-                                  the trajectories will become denser when the person slows down. Thus, if there is no
-                                  foot sliding, we should
-                                  occasionally see the change of density in pose trajectories.
-                              </div>
-                          </div>
-                          <table width="100%">
-                              <tr>
-                                  <th width="33%" align="center">GT</th>
-                                  <th width="33%" align="center">AvatarPoser</th>
-                                  <th width="33%" align="center">AGRoL</th>
-                              </tr>
-                              <tr>
-                                  <td align="center"><img src="static/resources/trajectory/gt01.jpg"></td>
-                                  <td align="center"><img src="static/resources/trajectory/ava01.jpg"></td>
-                                  <td align="center"><img src="static/resources/trajectory/agrol01.jpg"></td>
-                              </tr>
-
-                              <tr>
-                                  <td align="center"><img src="static/resources/trajectory/gt02.jpg"></td>
-                                  <td align="center"><img src="static/resources/trajectory/ava02.jpg"></td>
-                                  <td align="center"><img src="static/resources/trajectory/agrol02.jpg"></td>
-                              </tr>
-
-                          </table>
-                      </div>
-                    -->
+                    </div> -->
 
                 </div>
             </div>
