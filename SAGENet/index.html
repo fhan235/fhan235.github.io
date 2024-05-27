@@ -6,7 +6,7 @@
     <meta name="description" content="SAGENet.">
     <meta name="keywords" content="SAGENet, Motion Synthesis">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SAGENet: Stratified Avatar Generation from Sparse Observations</title>
+    <title>Stratified Avatar Generation from Sparse Observations</title>
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
     <link rel="stylesheet" href="./static/css/bulma.min.css">
     <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
@@ -35,7 +35,7 @@
                 <div class="column has-text-centered">
                     <h1 class="title is-2 publication-title"> Stratified Avatar Generation from Sparse Observations</h1>
                     <div class="is-size-3 publication-authors">
-                        <span class="author-block">CVPR 2024</span>
+                        <span class="author-block">CVPR 2024 (Oral)</span>
                     </div>
 
                     <div class="is-size-5 publication-authors">
@@ -53,11 +53,17 @@
                    rel="noopener noreferrer">Xianwei Zheng<sup>1</sup> </a>,</span>
                         <span class="author-block">
                 <a href="https://xuenan.net/" target="_blank"
-                   rel="noopener noreferrer">Nan Xue<sup>1,4</sup> </a>,</span>
-                        <span class="author-block">
-                <a href="https://visionlanguagelab.github.io/" target="_blank" rel="noopener noreferrer">Huijuan Xu<sup>2</sup>
-                  </a></span>
+                   rel="noopener noreferrer">Nan Xue <sup>4&dagger;</sup> </a>,</span>
+                       <span class="author-block">
+                <a href="" target="_blank"
+                   rel="noopener noreferrer">Huijuan Xu <sup>2</sup> </a></span>
                     </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"> (* Equal contribution, &dagger; Corresponding author)
+                        </span>
+                    </div>
+
 
                     <div class="is-size-5 publication-authors">
                         <span class="author-block"> <sup>1</sup> Wuhan University &nbsp <sup>2</sup> Pennsylvania State University &nbsp
@@ -107,14 +113,23 @@
 <section class="hero teaser">
     <div class="container is-max-desktop">
         <div class="hero-body">
-            <img src="static/images/teaser.png" alt="teaser_img" height="100%">
-            Stratified avatar generation from sparse observations. Given the sensory sparse observation of the body
-            motion: 6-DoF poses of the head and hand marked by RGB axes in (a), our method leverages a disentangled body
-            representation in (b) to reconstruct the upper-body conditioned on the sparse observation in (c), and
-            lower-body conditioned on the upper-body reconstruction in (d) to accomplish the full-body reconstruction in
-            (e).
+            <img src="static/images/Boxing.gif" alt="teaser_gif" height="100%">
+            <div style="position: relative;">
+                            <span style="position: absolute; left: 0px; color: #252525; font-weight: bold">Sparse Observation</span>
+                            <span style="position: absolute; left: 220px; color: #252525; font-weight: bold">Upper Motion</span>
+                            <span style="position: absolute; left: 470px; color: #252525; font-weight: bold">Lower Motion</span>
+                            <span style="position: absolute; left: 720px; color: #252525; font-weight: bold">Full Body Motion</span>
+                        </div>
+            <!-- <img src="static/images/teaser.png" alt="teaser_img" height="100%"> -->
         </div>
     </div>
+
+     <div class="container is-max-desktop">
+            Stratified avatar generation from sparse observations. Given the sensory sparse observation of the body
+            motion from the VR device: 6-DoF poses of the head and hand, our method leverages a disentangled body
+            representation to reconstruct the upper-body conditioned on the sparse observation, and
+            lower-body conditioned on the upper-body reconstruction to accomplish the full-body reconstruction.
+            </div>
 </section>
 
 <!--<section class="hero teaser">-->
@@ -127,14 +142,6 @@
 <!--        </div>-->
 <!--    </div>-->
 <!--</section>-->
-<div align="center">
-    <h2 class="title is-3">Video</h2>
-    <iframe width="1080" height="720" src="https://www.youtube.com/embed/RkXaxyv1TOU"
-            title="YouTube video player"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-            gyroscope; picture-in-picture; web-share" allowfullscreen>
-    </iframe>
-</div>
 
 <section class="section">
     <div class="container is-max-desktop">
@@ -197,128 +204,58 @@
         <!-- Approach. -->
         <div class="columns is-centered has-text-centered">
             <div class="column is-full-width">
-                <h2 class="title is-3">Results</h2>
+                <h2 class="title is-3">Results on AMASS Dataset</h2>
                 <div class="content has-text-justified">
-                    <p>
+                    <!-- <p>
                         Qualitative results on the AMASS Dataset.
-                    </p>
+                    </p> -->
                     <!--                    <img src="static/images/vis2.png" alt="Vis" height="80%">-->
                     <img src="static/images/vis.png" alt="Vis" height="80%">
+                    <!-- <div align="center"> -->
+                    <iframe width="1080" height="720" src="https://www.youtube.com/embed/RkXaxyv1TOU"
+                            title="YouTube video player"
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                            gyroscope; picture-in-picture; web-share" allowfullscreen>
+                    </iframe>
+                <!-- </div> -->
 
                 </div>
             </div>
         </div>
     </div>
-</section>
+
 
 <section class="section">
-    <div class="container is-max-desktop is-fluid">
+    <div class="container is-max-desktop">
+        <!-- Approach. -->
         <div class="columns is-centered has-text-centered">
             <div class="column is-full-width">
-                <h2 class="title is-3">Results</h2>
-                <div class="tabs is-boxed is-centered is-medium" id="tabs">
-                    <ul>
-                        <li data-tab="demo" class="is-active"><a>Demo</a></li>
-                        <!--                        <li data-tab="long-videos" class="is-active"><a>Long-Videos</a></li>-->
-                        <!--                        <li data-tab="trajectory"><a>Trajectory</a></li>-->
-                    </ul>
-                </div>
-                <div id="tabs-content">
-                    <!--                    <div data-content="long-videos" class="tab-content is-active content">-->
-                    <!--                        <div class="columns is-centered has-text-left">-->
-                    <!--                            <div class="column is-two-thirds content">-->
-                    <!--                                Visualization results of long videos.-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-
-                    <!--                        <table width="100%">-->
-                    <!--                            <tr>-->
-                    <!--                                <th width="15.6%" align="center">GT</th>-->
-                    <!--                                <th width="15.6%" align="center">AvatarPoser</th>-->
-                    <!--                                <th width="15.6%" align="center">AGRoL</th>-->
-                    <!--                                <th width="4%" align="center"></th>-->
-                    <!--                                <th width="15.6%" align="center">GT</th>-->
-                    <!--                                <th width="15.6%" align="center">AvatarPoser</th>-->
-                    <!--                                <th width="15.6%" align="center">AGRoL</th>-->
-                    <!--                            </tr>-->
-                    <!--                            <tr>-->
-                    <!--                                <td align="center"><img src="static/resources/gifs/0003_gt.gif"></td>-->
-                    <!--                                <td align="center"><img src="static/resources/gifs/0003_avatarposer.gif"></td>-->
-                    <!--                                <td align="center"><img src="static/resources/gifs/0003_agrol.gif"></td>-->
-                    <!--                                <td align="center" style="vertical-align: middle"></td>-->
-                    <!--                                <td align="center"><img src="static/resources/gifs/0008_gt.gif"></td>-->
-                    <!--                                <td align="center"><img src="static/resources/gifs/0008_avatarposer.gif"></td>-->
-                    <!--                                <td align="center"><img src="static/resources/gifs/0008_agrol.gif"></td>-->
-                    <!--                            </tr>-->
-                    <!--                        </table>-->
-                    <!--                    </div>-->
-
-                    <!-- <div data-content="demo" class="tab-content is-active content">
-                        <div class="columns is-centered has-text-left">
-                            <div class="column is-two-thirds content">
-                                We demonstrate generalization of SAGENet to real VR inputs from Quest2.
-                            </div>
-                        </div>
-                        <table width="100%">
-                            <tr>
-                                <th width="100%" align="center">Real Demo</th>
-                            </tr>
-                            <tr>
-                                <td align="center"><img src="static/images/gif_new/jump.gif"></td>
-                            </tr>
-
-                            <tr>
-                                <td align="center"><img src="static/images/gif_new/walk.gif"></td>
-                            </tr>
-
-                            <tr>
-                                <td align="center"><img src="static/images/gif_new/kick.gif"></td>
-                            </tr>
-
-                            <tr>
-                                <td align="center"><img src="static/images/gif_new/jog.gif"></td>
-                            </tr>
-                        </table>
-                    </div> -->
-                    <div data-content="demo" class="tab-content is-active content">
-                        <div class="columns is-centered has-text-left">
-                            <div class="column is-two-thirds content">
-                                We demonstrate generalization of SAGENet to real VR inputs from Quest2.
-                            </div>
-                        </div>
-                        <table width="100%">
-                            <tr>
-                                <th width="50%" align="center"></th>
-                                <th width="50%" align="center"></th>
-                            </tr>
-                            <tr>
-                                <td align="center"><img src="static/images/gif_new/jump.gif"></td>
-                                <td align="center"><img src="static/images/gif_new/walk.gif"></td>
-                            </tr>
-
-                            <tr>
-                                <!--                                <td align="center"><img src="static/images/gif_new/kick.gif"></td>-->
-                                <td align="center"><img src="static/images/gif_new/jog.gif"></td>
-                            </tr>
-                            <!--                            <tr>-->
-                            <!--                                <td align="center"><img src="static/images/gif_new/kick_avatarjlm.gif"></td>-->
-                            <!--                                <td align="center"><img src="static/images/gif_new/kick.gif"></td>-->
-                            <!--                            </tr>-->
-                        </table>
-
-                        <h2 class="title is-4">Challenging Case</h2>
-                        <td align="center"><img src="static/images/gif_new/kick_new2.gif"></td>
-                        <div style="position: relative;">
-                            <span style="position: absolute; left: 400px; color: #252525; font-weight: bold">AvatarJLM</span>
-                            <span style="position: absolute; left: 950px; color: #252525; font-weight: bold">SAGE</span>
-                            <span style="position: absolute; left: 1370px; color: #252525; font-weight: bold">Reference</span>
-                        </div>
-                    </div>
+                <h2 class="title is-3">Results on Real VR Device</h2>
+                <div class="content has-text-justified">
+                    <!-- <p>
+                        Qualitative results on the AMASS Dataset.
+                    </p> -->
+                    <!--                    <img src="static/images/vis2.png" alt="Vis" height="80%">-->
+                    <img src="static/images/Boxing.gif" alt="Vis" height="100%">
+                    <img src="static/images/Jump.gif" alt="Vis" height="100%">
+                    <img src="static/images/jumping_jack.gif" alt="Vis" height="100%">
+                    <img src="static/images/kick.gif" alt="Vis" height="100%">
+                    <img src="static/images/walk.gif" alt="Vis" height="100%">
 
                 </div>
             </div>
         </div>
     </div>
+
+<!--     <div align="center">
+    <h2 class="title is-3">Video</h2>
+    <iframe width="1080" height="720" src="https://www.youtube.com/embed/RkXaxyv1TOU"
+            title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+            gyroscope; picture-in-picture; web-share" allowfullscreen>
+    </iframe>
+</div> -->
+
 </section>
 
 <section class="section" id="BibTeX">
