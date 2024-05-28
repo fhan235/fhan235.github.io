@@ -113,7 +113,11 @@
 <section class="hero teaser">
     <div class="container is-max-desktop">
         <div class="hero-body">
-            <img src="static/images/boxing.gif" alt="teaser_gif" height="100%">
+            <div class="video-container" style="display: flex; justify-content: center; align-items: center; gap: 1px;">
+                    <video id="boxing" width="100%" playsinline="" autoplay="" loop="" muted="">
+                    <source src="static/images/boxing.mp4" type="video/mp4">
+                    </video>
+                </div>
             <div style="position: relative;">
                             <span style="position: absolute; left: 0px; color: #252525; font-weight: bold">Sparse Observation</span>
                             <span style="position: absolute; left: 220px; color: #252525; font-weight: bold">Upper Motion</span>
@@ -230,19 +234,64 @@
         <!-- Approach. -->
         <div class="columns is-centered has-text-centered">
             <div class="column is-full-width">
-                <h2 class="title is-3">Results on Real VR Device</h2>
-                <div class="content has-text-justified">
-                    <!-- <p>
-                        Qualitative results on the AMASS Dataset.
-                    </p> -->
-                    <!--                    <img src="static/images/vis2.png" alt="Vis" height="80%">-->
-                    <img src="static/images/boxing.gif" alt="Vis" height="100%">
-                    <img src="static/images/Jump.gif" alt="Vis" height="100%">
-                    <img src="static/images/jumping_jack.gif" alt="Vis" height="100%">
-                    <img src="static/images/kick.gif" alt="Vis" height="100%">
-                    <img src="static/images/walk.gif" alt="Vis" height="100%">
-
+                <h2 class="title is-3">Results on Real VR Device</h2>          
+                <div class="video-container" style="display: flex; justify-content: center; align-items: center; gap: 1px;">
+                    <video id="boxing" width="100%" playsinline="" autoplay="" loop="" muted="">
+                    <source src="static/images/boxing.mp4" type="video/mp4">
+                    </video>
+                    </div>
+                <div class="video-container" style="display: flex; justify-content: center; align-items: center; gap: 1px;">
+                    <video id="jump" width="100%" playsinline="" autoplay="" loop="" muted="">
+                    <source src="static/images/jump.mp4" type="video/mp4">
+                    </video>
                 </div>
+                 <div class="video-container" style="display: flex; justify-content: center; align-items: center; gap: 1px;">
+                    <video id="jumping_jack" width="100%" playsinline="" autoplay="" loop="" muted="">
+                    <source src="static/images/jumping_jack.mp4" type="video/mp4">
+                    </video>
+                </div>
+                 <div class="video-container" style="display: flex; justify-content: center; align-items: center; gap: 1px;">
+                    <video id="kick" width="100%" playsinline="" autoplay="" loop="" muted="">
+                    <source src="static/images/kick.mp4" type="video/mp4">
+                    </video>
+                </div>
+                 <div class="video-container" style="display: flex; justify-content: center; align-items: center; gap: 1px;">
+                    <video id="walk" width="100%" playsinline="" autoplay="" loop="" muted="">
+                    <source src="static/images/walk.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                    <!-- <video id="butterfly-3d" width="48%" playsinline="" autoplay="" loop="" muted=""
+                    poster="SpatialTracker_files/loading.gif">
+                    <source src="SpatialTracker_files/butterfly/butterfly-3d-tracks.mp4" type="video/mp4"> -->
+</div>
+            </div>
+        </div>
+    </div>
+
+<!--     <div align="center">
+    <h2 class="title is-3">Video</h2>
+    <iframe width="1080" height="720" src="https://www.youtube.com/embed/RkXaxyv1TOU"
+            title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+            gyroscope; picture-in-picture; web-share" allowfullscreen>
+    </iframe>
+</div> -->
+
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Approach. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3">Challenging Case</h2>          
+                <img src="static/images/gif_new/kick_new1.gif" alt="cc" height="80%">
+                <div style="position: relative;">
+                            <span style="position: absolute; left: 150px; color: #252525; font-weight: bold">AvatarJLM</span>
+                            <span style="position: absolute; left: 520px; color: #252525; font-weight: bold">Ours</span>
+                            <span style="position: absolute; left: 820px; color: #252525; font-weight: bold">Real Record</span>
+                        </div>
             </div>
         </div>
     </div>
